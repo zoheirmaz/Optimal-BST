@@ -9,7 +9,7 @@ for i in range(n):
     t = int(input('Enter key: '))
     keys.append(t)
 
-    t = int(input('Enter freq: '))
+    t = float(input('Enter freq: '))
     freq.append(t)
 
 R = [[0 for x in range(n + 1)] for y in range(n + 1)]
