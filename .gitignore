@@ -1,0 +1,5 @@
+# ignore a single file
+#mycode.class
+
+# ignore an entire directory
+/__pycache__/
