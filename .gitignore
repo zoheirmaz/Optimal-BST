@@ -2,4 +2,5 @@
 #mycode.class
 
 # ignore an entire directory
-/__pycache__/
+__pycache__/
+.idea/
