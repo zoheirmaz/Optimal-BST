@@ -3,14 +3,15 @@ from functions import tree, summ
 n = int(input('Enter n: '))
 
 keys = []
-freq = []
+# freq = []
 
 for i in range(n):
-    t = int(input('Enter key: '))
-    keys.append(t)
+    key = int(input('Enter key: '))
+    freq = float(input('Enter freq: '))
 
-    t = float(input('Enter freq: '))
-    freq.append(t)
+    keys.append((key,freq))
+
+keys.sort()
 
 R = [[0 for x in range(n + 1)] for y in range(n + 1)]
 
@@ -18,7 +19,7 @@ A = [[0 for x in range(n + 1)] for y in range(n + 1)]
 
 for i in range(n):
     A[i][i - 1] = 0
-    A[i][i] = freq[i]
+    A[i][i] = keys[i][1]
     R[i][i] = i
     R[i][i - 1] = 0
 
@@ -39,7 +40,7 @@ for diagonal in range(n):
             # pprint(min_list)
             min_list.sort()
 
-            A[i][j] = min_list[0][0] + summ(freq, i, j)
+            A[i][j] = min_list[0][0] + summ(keys, i, j)
 
             # R[i][j] = a value of k that gave the minimum;
             R[i][j] = min_list[0][1]
